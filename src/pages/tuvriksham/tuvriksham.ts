@@ -14,7 +14,7 @@ export class TuvrikshamPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TuvrikshamPage');
+    //console.log('ionViewDidLoad TuvrikshamPage');
   }
   navigate(id:string){
     //TODO: Nav Params need to be transferred to the target view
