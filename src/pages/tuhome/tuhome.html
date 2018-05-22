@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Tution Manager - Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="card-list">
+    <ion-item no-lines>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/boy_avatar.svg" alt="Avatar Image">
+      </ion-avatar>
+      <h2>Name</h2>
+      <p>Fees: 0000</p>
+      <ion-avatar class="list-icons" item-end>
+        <img src="../assets/imgs/icon_calendar.svg" (click)="navigate('attendance-add')">
+        <img src="../assets/imgs/icon_rupees.svg" (click)="navigate('fees-add')">
+        <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile')">
+      </ion-avatar>
+    </ion-item>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/girl_avatar.svg" alt="Avatar Image">
+      </ion-avatar>
+      <h2>Name</h2>
+      <p>Fees: 0000</p>
+      <ion-avatar class="list-icons" item-end>
+        <img src="../assets/imgs/icon_calendar.svg" (click)="navigate('attendance-add')">
+        <img src="../assets/imgs/icon_rupees.svg" (click)="navigate('fees-add')">
+        <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile')">
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

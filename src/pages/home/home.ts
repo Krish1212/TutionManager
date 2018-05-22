@@ -11,4 +11,9 @@ export class HomePage {
 
   }
 
+  //navigate to desired page
+  navigate(id:string){
+    this.navCtrl.push(id);
+  }
+
 }
