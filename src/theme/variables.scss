@@ -23,10 +23,16 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 $background-color:#9f30ef;
-$list-md-text-color:#F5F5F5;
+//$list-md-text-color:#F5F5F5;
 $item-md-paragraph-text-color:#F5F5F5;
-
-
+$item-ios-paragraph-text-color:#F5F5F5;
+$item-wp-paragraph-text-color:#F5F5F5;
+$item-md-padding-bottom:0px;
+$item-md-padding-top:0px;
+$item-ios-padding-bottom:0px;
+$item-ios-padding-top:0px;
+$item-wp-padding-bottom:0px;
+$item-wp-padding-top:0px;
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.

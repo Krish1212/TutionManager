@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events} from 'ionic-angular';
 
 @IonicPage({
   name:'tution-home'
@@ -9,14 +9,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tuhome.html',
 })
 export class TuhomePage {
+  studentsList:any;
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private events:Events) {
+    }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ionViewDidEnter(){
+    this.studentsList = [];
+    this.events.subscribe("studentsHList", (students) => {
+      console.log('from events');
+      console.log(students);
+      this.studentsList = students;
+    });
+    console.log('from home view');
+    console.log(this.studentsList);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TuhomePage');
-  }
-
   navigate(id:string){
     //TODO: Nav Params need to be transferred to the target view
     this.navCtrl.push(id);

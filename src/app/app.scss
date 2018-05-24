@@ -17,12 +17,17 @@
 ion-avatar.list-icons{
     display:inline;
     img{
+        width:20px;
+        height:20px;
         float:right;
-        margin-right:15px;
+        margin-right:5px;
     }
 }
 ion-list.card-list{
-    ion-item{
+    ion-item {
+        h2, p{
+            font-size:1.25rem;
+        }
         margin-bottom:5px;
         border:1px solid #F5F5F5 !important;
         background:#bd70f4;

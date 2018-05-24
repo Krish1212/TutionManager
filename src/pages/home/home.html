@@ -20,11 +20,11 @@
     <ion-row>
       <ion-col col-6 (click)="navigate('tution-home')">
         <p><strong>Home</strong></p>
-        <p>Students:</p>
+        <p>Students: {{(studentsHList)?.length}}</p>
       </ion-col>
       <ion-col col-6 (click)="navigate('tution-vriksham')">
           <p><strong>Vriksham</strong></p>
-          <p>Students:</p>
+          <p>Students: {{(studentsVList)?.length}}</p>
       </ion-col>
     </ion-row>
     <ion-row>

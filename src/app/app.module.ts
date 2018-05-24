@@ -8,6 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StudentsProvider } from '../providers/students/students';
 
+//ANGULARFIRE2
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+//FIREBASE CONFIG
+import { FIREBASE_CONFIG } from '../app/app.firebase.config';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -15,6 +24,10 @@ import { StudentsProvider } from '../providers/students/students';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

@@ -7,11 +7,11 @@
 
 <ion-content padding>
   <ion-list class="card-list">
-    <ion-item no-lines>
+    <ion-item no-lines *ngFor="let student of studentsList">
       <ion-avatar item-start>
         <img src="../assets/imgs/boy_avatar.svg" alt="Avatar Image">
       </ion-avatar>
-      <h2>Name</h2>
+      <h2>Name: {{student.name}}</h2>
       <p>Fees: 0000</p>
       <ion-avatar class="list-icons" item-end>
         <img src="../assets/imgs/icon_calendar.svg" (click)="navigate('attendance-add')">
