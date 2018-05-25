@@ -4,6 +4,7 @@ export interface Student{
     name:string,
     age:number,
     gender:string,
+    fees:number,
     dob?:Date,
     doa:Date,
     parentName:string,

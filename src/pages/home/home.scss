@@ -12,16 +12,18 @@ page-home {
     }
     .grid1{
         ion-row{
-            width:100%;
-            height:50px;
+            padding-bottom:5px;
         }
         ion-col{
             border-bottom:1px solid;
             border-color:color($colors,text);
             background:#e1bffa;
             text-align: center;
-            line-height: 5px;
-            font-size:12px;
+            line-height:10px;
+            font-size:15px;
+            p{
+                display:inline;
+            }
         }
         ion-col:nth-child(1){
             border-right:1px solid;

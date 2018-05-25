@@ -18,26 +18,27 @@
   </ion-card>
   <ion-grid class="grid1">
     <ion-row>
-      <ion-col col-6 (click)="navigate('tution-home')">
-        <p><strong>Home</strong></p>
-        <p>Students: {{(studentsHList)?.length}}</p>
+      <ion-col col-6 (click)="navigate('tution-home',true)">
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_centre.svg" alt="Add Plus"><br><br><strong>Home</strong><br><br>Students: {{(studentsHList)?.length}}</p>
       </ion-col>
-      <ion-col col-6 (click)="navigate('tution-vriksham')">
-          <p><strong>Vriksham</strong></p>
-          <p>Students: {{(studentsVList)?.length}}</p>
+      <ion-col col-6 (click)="navigate('tution-vriksham',true)">
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_centre.svg" alt="Add Plus"><br><br><strong>Vriksham</strong><br><br>Students: {{(studentsVList)?.length}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-6>
-        <p><strong>Attendance</strong></p>
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_plus.svg" alt="Add Plus"><br><br><strong>Admission</strong></p>
       </ion-col>
       <ion-col col-6>
-          <p><strong>Fees</strong></p>
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_attendance.svg" alt="Add Plus"><br><br><strong>Attendance</strong></p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-6>
-        <p><strong>Settings</strong></p>
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_fees.svg" alt="Add Plus"><br><br><strong>Fees</strong></p>
+      </ion-col>
+      <ion-col col-6>
+        <p><img width="30px" height="30px" src="../assets/imgs/icon_settings.svg" alt="Add Plus"><br><br><strong>Setting</strong></p>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -7,27 +7,16 @@
 
 <ion-content padding>
   <ion-list class="card-list">
-    <ion-item no-lines>
+    <ion-item no-lines *ngFor="let student of studentsList">
       <ion-avatar item-start>
-        <img src="../assets/imgs/boy_avatar.svg" alt="Avatar Image">
+        <img src="../assets/imgs/{{student.data().gender}}_avatar.svg" alt="Avatar Image">
+        <p>{{student.data().id}}</p>
       </ion-avatar>
-      <h2>Name</h2>
-      <p>Fees: 0000</p>
+      <h2>{{student.data().name}}</h2>
+      <p>Fees: {{student.data().fees}}</p>
       <ion-avatar class="list-icons" item-end>
-        <img src="../assets/imgs/icon_calendar.svg" (click)="navigate('attendance-add')">
-        <img src="../assets/imgs/icon_rupees.svg" (click)="navigate('fees-add')">
-        <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile')">
-      </ion-avatar>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../assets/imgs/girl_avatar.svg" alt="Avatar Image">
-      </ion-avatar>
-      <h2>Name</h2>
-      <p>Fees: 0000</p>
-      <ion-avatar class="list-icons" item-end>
-        <img src="../assets/imgs/icon_calendar.svg" (click)="navigate('attendance-add')">
-        <img src="../assets/imgs/icon_rupees.svg" (click)="navigate('fees-add')">
+        <img src="../assets/imgs/icon_attendance.svg" (click)="navigate('attendance-add')">
+        <img src="../assets/imgs/icon_fees.svg" (click)="navigate('fees-add')">
         <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile')">
       </ion-avatar>
     </ion-item>

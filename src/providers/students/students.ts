@@ -48,7 +48,7 @@ export class StudentsProvider {
   //delete the student from db
   deleteStudentProfile(id:string){
     return Observable.create(observer => {
-      this.afStore.collection(`students`).doc(id).delete().then(success => {
+      this.afStore.collection(`students`).doc(`${id}`).delete().then(success => {
         observer.next(success);
       }).catch(failure => {
         observer.error(failure);

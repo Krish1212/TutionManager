@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Loading, LoadingController, AlertController, ToastController, Events } from 'ionic-angular';
+import { NavController, NavParams, Loading, LoadingController, AlertController, ToastController } from 'ionic-angular';
 
 import { StudentsProvider } from '../../providers/students/students';
 //import { Student } from '../../models/student';
@@ -18,8 +18,7 @@ export class HomePage {
     private studProvider: StudentsProvider, 
     private loadingCtrl:LoadingController, 
     private alertCtrl:AlertController, 
-    private toastCtrl:ToastController, 
-    private events:Events) {
+    private toastCtrl:ToastController) {
 
   }
   ionViewDidLoad(){
@@ -41,10 +40,10 @@ export class HomePage {
           this.studentsVList.push(student);
         }          
       });
+      /* console.log('home');
       console.log(this.studentsHList);
-      console.log(this.studentsVList);
-      this.events.publish("studentsHList",this.studentsHList);
-      this.events.publish("studentsVList",this.studentsVList);
+      console.log('vrik');
+      console.log(this.studentsVList); */
       this.loading.dismiss().then(() =>{
         this.toastCtrl.create({
           message: 'Students Listed successfully',
@@ -67,8 +66,17 @@ export class HomePage {
   }
 
   //navigate to desired page
-  navigate(id:string){
-    this.navCtrl.push(id);
+  navigate(id:string,params:boolean){
+    if(params){
+      switch (id){
+        case 'tution-home':
+          this.navCtrl.push(id, {"studentInfo": this.studentsHList});
+          break;
+        case 'tution-vriksham':
+          this.navCtrl.push(id, {"studentInfo": this.studentsVList});
+          break;
+      }
+    }
   }
 
 }
