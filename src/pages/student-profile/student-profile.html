@@ -1,12 +1,35 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Student Profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card>
+    <ion-thumbnail>
+      <img src="../assets/imgs/{{studProfile.data().gender}}_avatar.svg" width="50" height="50">
+    </ion-thumbnail>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col text-center><strong>{{studProfile.data().name}}</strong></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>ID: {{studProfile.data().id}}</ion-col>
+          <ion-col>DOA: {{studProfile.data().doa}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-item>{{studProfile.data().centre}}</ion-item>
+  <ion-item>{{studProfile.data().fees}}</ion-item>
+  <ion-item>{{studProfile.data().dob}}</ion-item>
+  <ion-item>{{studProfile.data().doa}}</ion-item>
+  <ion-item>{{studProfile.data().parentName}}</ion-item>
+  <ion-item>{{studProfile.data().parentMobile}}</ion-item>
+  <ion-item>{{studProfile.data().parentWork}}</ion-item>
 
 </ion-content>

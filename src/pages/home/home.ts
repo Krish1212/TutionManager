@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Loading, LoadingController, AlertController, ToastController , Events} from 'ionic-angular';
+import { NavController, NavParams, Loading, LoadingController, AlertController, ToastController } from 'ionic-angular';
 
 import { StudentsProvider } from '../../providers/students/students';
 
@@ -17,8 +17,7 @@ export class HomePage {
     private studProvider: StudentsProvider, 
     private loadingCtrl:LoadingController, 
     private alertCtrl:AlertController, 
-    private toastCtrl:ToastController, 
-    private events:Events) {
+    private toastCtrl:ToastController) {
 
   }
   ionViewDidEnter(){
@@ -26,7 +25,7 @@ export class HomePage {
   }
   getAllStudents(){
     this.loading = this.loadingCtrl.create({
-      content: 'Fetching students...Please wait',
+      content: 'Fetching records...Please wait',
       spinner: 'ios',
     });
     this.studProvider.getAllStudents().subscribe(students => {
@@ -43,9 +42,9 @@ export class HomePage {
       });
       this.loading.dismiss().then(() =>{
         this.toastCtrl.create({
-          message: 'Students Listed successfully',
-          duration: 2000,
-          position:'bottom'
+          message: 'Fetching completed',
+          duration: 1000,
+          position:'middle'
         }).present();
       });
     this.dbSize = students.size;

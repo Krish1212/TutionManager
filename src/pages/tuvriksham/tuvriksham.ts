@@ -10,16 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tuvriksham.html',
 })
 export class TuvrikshamPage {
-
+  studentsList:any = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    this.studentsList = this.navParams.get("studentInfo");
+    console.log('from home view');
+    console.log(this.studentsList);
+}
 
-  ionViewDidLoad() {
-    //console.log('ionViewDidLoad TuvrikshamPage');
-  }
-  navigate(id:string){
-    //TODO: Nav Params need to be transferred to the target view
-    this.navCtrl.push(id);
-  }
+navigate(id:string,student:any){
+  //console.log(student);
+  //Nav Params need to be transferred to the target view
+  this.navCtrl.push(id, {"studentInfo":student});
+}
 
 }

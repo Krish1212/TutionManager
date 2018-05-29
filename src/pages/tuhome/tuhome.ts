@@ -19,9 +19,10 @@ export class TuhomePage {
 
   ionViewDidEnter(){
   }
-  navigate(id:string){
-    //TODO: Nav Params need to be transferred to the target view
-    this.navCtrl.push(id);
+  navigate(id:string,student:any){
+    //console.log(student);
+    //Nav Params need to be transferred to the target view
+    this.navCtrl.push(id, {"studentInfo":student});
   }
 
 }

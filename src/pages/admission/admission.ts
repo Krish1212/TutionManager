@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Loading, LoadingController, AlertController, ToastController , Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Loading, LoadingController, AlertController, ToastController  } from 'ionic-angular';
 import { FormGroup, FormBuilder, AbstractControl, Validators } from '@angular/forms';
 import * as moment from 'moment';
 
@@ -35,8 +35,7 @@ export class AdmissionPage {
     private studProvider:StudentsProvider, 
     private loadingCtrl:LoadingController, 
     private alertCtrl:AlertController, 
-    private toastCtrl:ToastController, 
-    private events:Events) {
+    private toastCtrl:ToastController) {
       let num = this.navParams.get("dataSize");
       num++;
       if (num > 0 && num < 10) {
@@ -56,15 +55,15 @@ export class AdmissionPage {
         'parentMobile':['',Validators.compose([Validators.required])],
         'parentWork':['',Validators.compose([Validators.required])],
       });
-      this.name                   = this.newStudent.controls['name'];
-      this.gender                = this.newStudent.controls['gender'];
-      this.fees                      = this.newStudent.controls['fees'];
-      this.centre                 = this.newStudent.controls['centre'];
-      this.dob                      = this.newStudent.controls['dob'];
-      this.doa                      = this.newStudent.controls['doa'];
-      this.parentName    = this.newStudent.controls['parentName'];
-      this.parentMobile  = this.newStudent.controls['parentMobile'];
-      this.parentWork     = this.newStudent.controls['parentWork'];
+      this.name         = this.newStudent.controls['name'];
+      this.gender       = this.newStudent.controls['gender'];
+      this.fees         = this.newStudent.controls['fees'];
+      this.centre       = this.newStudent.controls['centre'];
+      this.dob          = this.newStudent.controls['dob'];
+      this.doa          = this.newStudent.controls['doa'];
+      this.parentName   = this.newStudent.controls['parentName'];
+      this.parentMobile = this.newStudent.controls['parentMobile'];
+      this.parentWork   = this.newStudent.controls['parentWork'];
     }
 
     addStudent(){
