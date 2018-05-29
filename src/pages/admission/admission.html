@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>New Admission</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form no-validate [formGroup]="newStudent" (ngSubmit)="addStudent()">
+    <ion-item no-lines>
+      <ion-label>ID: {{id}}</ion-label>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Gender</ion-label>
+      <ion-select formControlName="gender" interface="popover">
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Fees</ion-label>
+      <ion-input type="text" formControlName="fees"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Centre</ion-label>
+      <ion-select formControlName="centre" interface="popover">
+        <ion-option value="Home">Home</ion-option>
+        <ion-option value="Vriksham">Vriksham</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Date of Birth</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="dob"></ion-datetime>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Date of Admission</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="doa"></ion-datetime>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Parent Name</ion-label>
+      <ion-input type="text" formControlName="parentName"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Parent Mobile</ion-label>
+      <ion-input type="text" formControlName="parentMobile"></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label stacked>Parent Occupation</ion-label>
+      <ion-input type="text" formControlName="parentWork"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!newStudent.valid" block color="secondary">Add</button>
+    <button ion-button type="reset" block outline color="secondary">Reset</button>
+  </form>
+</ion-content>

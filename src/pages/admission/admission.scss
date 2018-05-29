@@ -1,0 +1,13 @@
+page-admission {
+    ion-item ion-input,ion-select,ion-datetime{
+        border:1px solid color($colors,text);
+        margin-bottom:2px;
+    }
+    ion-item ion-label{
+        font-size:15px !important;
+        color:color($colors,text) !important;
+    }
+    ion-item ion-datetime{
+        padding:8px !important;
+    }
+}
