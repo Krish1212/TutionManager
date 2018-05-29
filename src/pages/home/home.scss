@@ -1,6 +1,6 @@
 page-home {
     .home-card{
-        background:#ae50f2;
+        background:color($colors,light);
         ion-card-header{
             text-align:center;
             font-weight: bold;
@@ -16,8 +16,8 @@ page-home {
         }
         ion-col{
             border-bottom:1px solid;
-            border-color:color($colors,text);
-            background:#e1bffa;
+            border-color:color($colors,primary);
+            background:color($colors,secondary);
             text-align: center;
             line-height:10px;
             font-size:15px;
@@ -27,7 +27,7 @@ page-home {
         }
         ion-col:nth-child(1){
             border-right:1px solid;
-            border-color:color($colors,text);
+            border-color:color($colors,primary);
         }
     }
 }
