@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Tution Manager - Home</ion-title>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list class="card-list">
-    <ion-item no-lines *ngFor="let student of studentsList">
+<ion-content>
+  <ion-list no-lines class="card-list">
+    <ion-item *ngFor="let student of studentsList">
       <ion-avatar item-start>
         <img src="../assets/imgs/{{student.data().gender}}_avatar.svg" alt="Avatar Image">
         <p>{{student.data().id}}</p>

@@ -1,2 +1,32 @@
 page-student-profile {
+    ion-card ion-item, ion-card ion-card-content{
+        background:#87a5c5 !important;
+    }
+    .segment-bar{
+        padding-top:10px;
+    }
+    .segment-bar ion-segment-button{
+        height:3rem !important;
+    }
+    .data-grid{
+        ion-row:nth-child(odd){
+            background:#cbd8e7; 
+        }
+        ion-row:nth-child(even){
+            background:#a8bed7;
+        }
+        ion-row ion-col:nth-child(1){
+            font-weight: bold;
+            border-right:1px solid;
+            border-color:color($colors,text);
+        }
+        ion-row.data-grid-header ion-col{
+            background:color($colors,secondary);
+            border:none;
+        }
+    }
+    .edit-icon{
+        cursor:pointer;
+        padding-right:5px;
+    }
 }

@@ -8,5 +8,23 @@
 
 
 <ion-content padding>
-
+  <ion-segment [(ngModel)]="choice">
+    <ion-segment-button value="home">Home</ion-segment-button>
+    <ion-segment-button value="vriksham">Vriksham</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="choice">
+    <ion-list no-lines *ngSwitchCase="'home'">
+      <ion-item *ngFor="let student of students1Info">
+        <ion-label item-start>{{student.data().name}}</ion-label>
+        <ion-checkbox color="secondary" item-end></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list no-lines *ngSwitchCase="'vriksham'">
+      <ion-item *ngFor="let student of students2Info">
+        <ion-label item-start>{{student.data().name}}</ion-label>
+        <ion-checkbox color="secondary" item-end></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </div>
+  <button ion-button block color="secondary">Paid</button>
 </ion-content>

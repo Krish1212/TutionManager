@@ -44,7 +44,6 @@ export class HomePage {
         this.toastCtrl.create({
           message: 'Fetching completed',
           duration: 1000,
-          position:'middle'
         }).present();
       });
     this.dbSize = students.size;
@@ -59,7 +58,7 @@ export class HomePage {
         });
       });
     });
-    this.loading.present();
+    //this.loading.present();
   }
 
   //navigate to desired page
@@ -74,6 +73,9 @@ export class HomePage {
           break;
         case 'admission':
           this.navCtrl.push(id, {"dataSize":this.dbSize});
+          break;
+        case 'fees-add':
+          this.navCtrl.push(id, {"students1Info": this.studentsHList, "students2Info": this.studentsVList});
           break;
       }
     } else this.navCtrl.push(id);

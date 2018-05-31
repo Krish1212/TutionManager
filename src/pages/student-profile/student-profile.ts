@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, Toast } from 'ionic-angular';
 
 @IonicPage({
   name: 'student-profile'
@@ -10,10 +10,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StudentProfilePage {
   studProfile:any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  switch:string = "info";
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private toastCtrl:ToastController) {
     this.studProfile = this.navParams.get("studentInfo");
-    console.log(this.studProfile);
+  }
+
+  editStudent(){
+    this.toastCtrl.create({
+      message:'Edit Student clicked',
+      duration:2000
+    }).present();
   }
 
 }

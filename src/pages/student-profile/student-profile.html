@@ -9,27 +9,48 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-thumbnail>
-      <img src="../assets/imgs/{{studProfile.data().gender}}_avatar.svg" width="50" height="50">
-    </ion-thumbnail>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../assets/imgs/{{studProfile.data().gender}}_avatar.svg" width="50" height="50">
+      </ion-avatar>
+      <h2>{{studProfile.data().name}}</h2>
+      <p>ID: {{studProfile.data().id}}</p>
+    </ion-item>
     <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col text-center><strong>{{studProfile.data().name}}</strong></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>ID: {{studProfile.data().id}}</ion-col>
-          <ion-col>DOA: {{studProfile.data().doa}}</ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-segment [(ngModel)]="switch" class="segment-bar">
+        <ion-segment-button value="info">
+          <!-- <ion-icon name="ios-information-circle-outline"></ion-icon> -->
+          <img src="../assets/imgs/icon_info.svg" width="24" height="24">
+        </ion-segment-button>
+        <ion-segment-button value="attendance">
+          <!-- <ion-icon name="ios-calendar-outline"></ion-icon> -->
+          <img src="../assets/imgs/icon_attendance.svg" width="24" height="24">
+        </ion-segment-button>
+        <ion-segment-button value="fees">
+          <!-- <ion-icon name="md-cash"></ion-icon> -->
+          <img src="../assets/imgs/icon_fees.svg" width="24" height="24">
+        </ion-segment-button>
+      </ion-segment>
     </ion-card-content>
   </ion-card>
-  <ion-item>{{studProfile.data().centre}}</ion-item>
-  <ion-item>{{studProfile.data().fees}}</ion-item>
-  <ion-item>{{studProfile.data().dob}}</ion-item>
-  <ion-item>{{studProfile.data().doa}}</ion-item>
-  <ion-item>{{studProfile.data().parentName}}</ion-item>
-  <ion-item>{{studProfile.data().parentMobile}}</ion-item>
-  <ion-item>{{studProfile.data().parentWork}}</ion-item>
+  <div [ngSwitch]="switch">
+    <ion-grid class="data-grid" *ngSwitchCase="'info'">
+      <ion-row class="data-grid-header"><ion-col col-10>Basic Information</ion-col><ion-col col-2 text-right (click)="editStudent()"><ion-icon name="md-create" class="edit-icon"></ion-icon></ion-col></ion-row>
+      <ion-row><ion-col>Centre</ion-col><ion-col>{{studProfile.data().centre}}</ion-col></ion-row>
+      <ion-row><ion-col>Fees</ion-col><ion-col>{{studProfile.data().fees}}</ion-col></ion-row>
+      <ion-row><ion-col>Date of Birth</ion-col><ion-col>{{studProfile.data().dob}}</ion-col></ion-row>
+      <ion-row><ion-col>Parent Name</ion-col><ion-col>{{studProfile.data().parentName}}</ion-col></ion-row>
+      <ion-row><ion-col>Parent Mobile</ion-col><ion-col>{{studProfile.data().parentMobile}}</ion-col></ion-row>
+      <ion-row><ion-col>Parent Work</ion-col><ion-col>{{studProfile.data().parentWork}}</ion-col></ion-row>
+    </ion-grid>
+    <ion-grid class="data-grid" *ngSwitchCase="'attendance'">
+      <ion-row class="data-grid-header"><ion-col>Attendance</ion-col></ion-row>
+      <ion-row><ion-col>May 2018</ion-col><ion-col>Present: 20</ion-col></ion-row>
+    </ion-grid>
+    <ion-grid class="data-grid" *ngSwitchCase="'fees'">
+      <ion-row class="data-grid-header"><ion-col>Fees</ion-col></ion-row>
+      <ion-row><ion-col>May 2018</ion-col><ion-col>Paid: {{studProfile.data().fees}}</ion-col></ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
