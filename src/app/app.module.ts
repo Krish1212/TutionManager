@@ -4,6 +4,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { NgCalendarModule } from 'ionic2-calendar'; 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StudentsProvider } from '../providers/students/students';
@@ -28,7 +30,8 @@ import { FIREBASE_CONFIG } from '../app/app.firebase.config';
     AngularFireAuthModule,
     AngularFirestoreModule,
     //AngularFireStorageModule,
-    IonicModule.forRoot(MyApp)
+    NgCalendarModule,
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
