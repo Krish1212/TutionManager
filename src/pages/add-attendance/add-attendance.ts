@@ -14,10 +14,12 @@ export class AddAttendancePage {
   eventSource = [];
   viewTitle: string;
   selectedDay = new Date();
+  displayDate:string;
   calendar = {
     mode: 'month',
-    currentDate: new Date()
+    currentDate: new Date(),
   }
+  
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     private modalCtrl:ModalController, 
@@ -42,6 +44,9 @@ export class AddAttendancePage {
         });
       }
     });
+  }
+  onCurrentDateChanged(ev:Date){
+    this.displayDate = moment(ev).format('DD/MMMM/YYYY');
   }
  
   onViewTitleChanged(title) {

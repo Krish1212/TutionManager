@@ -13,10 +13,15 @@
 
 
 <ion-content padding>
-    
+  <ion-item no-lines>
+    <ion-icon name="ios-arrow-dropleft-outline" item-start></ion-icon>
+    <ion-label text-center>{{displayDate}}</ion-label>
+    <ion-icon name="ios-arrow-dropright-outline" item-end></ion-icon>
+  </ion-item>
   <calendar [eventSource]="eventSource"
         [calendarMode]="calendar.mode"
-        [currentDate]="calendar.currentDate"
+        [currentDate]="calendar.currentDate" 
+        (onCurrentDateChanged)="onCurrentDateChanged($event)" 
         (onEventSelected)="onEventSelected($event)"
         (onTitleChanged)="onViewTitleChanged($event)"
         (onTimeSelected)="onTimeSelected($event)"
