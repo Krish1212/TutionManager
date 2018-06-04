@@ -75,6 +75,7 @@ export class HomePage {
           this.navCtrl.push(id, {"dataSize":this.dbSize});
           break;
         case 'fees-add':
+        case 'attendance-add':
           this.navCtrl.push(id, {"students1Info": this.studentsHList, "students2Info": this.studentsVList});
           break;
       }

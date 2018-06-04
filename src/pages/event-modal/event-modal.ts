@@ -12,11 +12,19 @@ export class EventModalPage {
  
   event = { startTime: new Date().toISOString(), endTime: new Date().toISOString(), allDay: false };
   minDate = new Date().toISOString();
+  students1Info:any;
+  students2Info:any;
+  choice:string = 'home';
+
  
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
+    this.students1Info = this.navParams.get("students1Info");
+    this.students2Info = this.navParams.get("students2Info");
     let preselectedDate = moment(this.navParams.get('selectedDay')).format();
     this.event.startTime = preselectedDate;
     this.event.endTime = preselectedDate;
+    console.log(this.students1Info);
+    console.log(this.students2Info);
   }
  
   cancel() {

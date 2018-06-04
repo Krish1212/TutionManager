@@ -19,15 +19,34 @@ export class AddAttendancePage {
     mode: 'month',
     currentDate: new Date(),
   }
-  
+  lockSwipes:boolean;
+  students1Info:any;
+  students2Info:any;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     private modalCtrl:ModalController, 
     private alertCtrl:AlertController) {
+      this.students1Info = this.navParams.get("students1Info");
+      this.students2Info = this.navParams.get("students2Info");
+      console.log(this.students1Info);
+      console.log(this.students2Info);
+    }
+  ionViewDidEnter(){
+    setTimeout(() => {
+      this.lockSwipes = true;
+    }, 100);
+  }
+  prevMonth(){
+    var today = this.calendar.currentDate;
+    this.calendar.currentDate = new Date(today.setMonth((today).getMonth() - 1));
+  }
+  nextMonth(){
+    var today = this.calendar.currentDate;
+    this.calendar.currentDate = new Date(today.setMonth((today).getMonth() + 1));
   }
 
   addEvent() {
-    let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay});
+    let modal = this.modalCtrl.create('EventModalPage', {selectedDay: this.selectedDay, students1Info: this.students1Info, students2Info:this.students2Info});
     modal.present();
     modal.onDidDismiss(data => {
       if (data) {
