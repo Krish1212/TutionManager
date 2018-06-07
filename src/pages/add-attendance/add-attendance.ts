@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import moment from 'moment';
 
-
 @IonicPage({
   name:'attendance-add'
 })
@@ -28,8 +27,8 @@ export class AddAttendancePage {
     private alertCtrl:AlertController) {
       this.students1Info = this.navParams.get("students1Info");
       this.students2Info = this.navParams.get("students2Info");
-      console.log(this.students1Info);
-      console.log(this.students2Info);
+      //console.log(this.students1Info);
+      //console.log(this.students2Info);
     }
   ionViewDidEnter(){
     setTimeout(() => {
@@ -52,8 +51,9 @@ export class AddAttendancePage {
       if (data) {
         let eventData = data;
  
-        eventData.startTime = new Date(data.startTime);
-        eventData.endTime = new Date(data.endTime);
+        //eventData.startTime = new Date(data.startTime);
+        //eventData.endTime = new Date(data.endTime);
+        console.log(eventData);
  
         let events = this.eventSource;
         events.push(eventData);

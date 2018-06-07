@@ -35,24 +35,33 @@
     <ion-icon name="checkmark"></ion-icon> Add Event
   </button> -->
 
-  <ion-segment [(ngModel)]="choice">
+<!--   <ion-segment [(ngModel)]="choice">
     <ion-segment-button value="home">Home</ion-segment-button>
     <ion-segment-button value="vriksham">Vriksham</ion-segment-button>
   </ion-segment>
   <div [ngSwitch]="choice">
     <ion-list no-lines *ngSwitchCase="'home'">
-      <ion-item *ngFor="let student of students1Info">
-        <ion-label item-start>{{student.data().name}}</ion-label>
-        <ion-checkbox color="secondary" item-end></ion-checkbox>
+      <ion-item *ngFor="let student of students1Info; let i = index">
+        <ion-label item-start [(ngModel)]="studentsRegister[i].id">{{student.data().id}}</ion-label>
+        <ion-label [(ngModel)]="studentsRegister[i].name">{{student.data().name}}</ion-label>
+        <ion-checkbox color="secondary" item-end [(ngModel)]="studentsRegister[i].present"></ion-checkbox>
       </ion-item>
     </ion-list>
     <ion-list no-lines *ngSwitchCase="'vriksham'">
       <ion-item *ngFor="let student of students2Info">
-        <ion-label item-start>{{student.data().name}}</ion-label>
-        <ion-checkbox color="secondary" item-end></ion-checkbox>
+        <ion-label item-start>{{student.data().id}}</ion-label>
+        <ion-label>{{student.data().name}}</ion-label>
+        <ion-checkbox color="secondary" item-end [(ngModel)]="attendance.present"></ion-checkbox>
       </ion-item>
     </ion-list>
-  </div>
-  <button ion-button block color="secondary">Paid</button>
+  </div> -->
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of studentsRegister; let i = index">
+      <ion-label item-start>{{item.id}}</ion-label>
+      <ion-label>{{item.name}}</ion-label>
+      <ion-checkbox color="secondary" item-end [(ngModel)]="studentsRegister[i].present"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <button ion-button block color="secondary" (click)="save()">Paid</button>
   
 </ion-content>
