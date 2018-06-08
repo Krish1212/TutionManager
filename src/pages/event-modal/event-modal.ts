@@ -22,7 +22,7 @@ export class EventModalPage {
   constructor(public navCtrl: NavController, private navParams: NavParams, public viewCtrl: ViewController) {
     this.students1Info = this.navParams.get("students1Info");
     this.students2Info = this.navParams.get("students2Info");
-    let preselectedDate = moment(this.navParams.get('selectedDay')).format('DD/MM/YYYY');
+    let preselectedDate = moment(this.navParams.get('selectedDay')).format('DD/MMMM/YYYY');
     this.students1Info.forEach(element => {
       this.attendance = {'id': element.data().id, 'date': preselectedDate, 'name':element.data().name, 'present':false}
       this.studentsRegister.push(this.attendance);
@@ -35,7 +35,7 @@ export class EventModalPage {
     //this.event.endTime = preselectedDate;
     //console.log(this.students1Info);
     //console.log(this.students2Info);
-    console.log(this.studentsRegister);
+    //console.log(this.studentsRegister);
   }
  
   cancel() {
@@ -43,8 +43,8 @@ export class EventModalPage {
   }
  
   save() {
-    console.log(this.studentsRegister);
-    //this.viewCtrl.dismiss(this.attendance);
+    //console.log(this.studentsRegister);
+    this.viewCtrl.dismiss(this.studentsRegister);
   }
  
 }

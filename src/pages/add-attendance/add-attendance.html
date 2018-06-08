@@ -18,16 +18,24 @@
     <ion-label text-center>{{displayDate}}</ion-label>
     <ion-icon name="ios-arrow-dropright-outline" item-end (click)="nextMonth()"></ion-icon>
   </ion-item>
-  <calendar [eventSource]="eventSource"
+<!--   (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+ -->
+  <calendar
         [calendarMode]="calendar.mode"
         [currentDate]="calendar.currentDate" 
         [lockSwipes]="lockSwipes" 
         (onCurrentDateChanged)="onCurrentDateChanged($event)" 
-        (onEventSelected)="onEventSelected($event)"
-        (onTitleChanged)="onViewTitleChanged($event)"
-        (onTimeSelected)="onTimeSelected($event)"
+        (onTimeSelected)="onTimeSelected($event)" 
         step="30"
         class="calendar">
     </calendar>
-    
+  <div *ngFor="let event of eventSource">
+    <ion-item *ngIf="event.date == displayDate" no-lines>
+      <ion-label item-start>{{selectedDay}} == {{displayDate}}</ion-label>
+      <ion-label>{{event.name}}</ion-label>
+      <ion-icon [name]="event.present?'md-checkbox':'md-close-circle'" item-end></ion-icon>
+    </ion-item>
+  </div>
 </ion-content>

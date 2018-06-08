@@ -53,10 +53,12 @@ export class AddAttendancePage {
  
         //eventData.startTime = new Date(data.startTime);
         //eventData.endTime = new Date(data.endTime);
+        console.log('eventData');
         console.log(eventData);
  
         let events = this.eventSource;
-        events.push(eventData);
+        events = eventData;
+        //events.push(eventData);
         this.eventSource = [];
         setTimeout(() => {
           this.eventSource = events;
