@@ -5,7 +5,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-list class="card-list">
     <ion-item no-lines *ngFor="let student of studentsList">
       <ion-avatar item-start>
@@ -14,11 +14,15 @@
       </ion-avatar>
       <h2>{{student.data().name}}</h2>
       <p>Fees: {{student.data().fees}}</p>
-      <div class="list-icons" item-end>
+      <ion-note item-end class="list-icons">
+        <p>{{student.data().parentMobile}}</p>
+        <img src="./assets/imgs/icon_phone.svg">
+      </ion-note>
+<!--       <div class="list-icons" item-end>
         <img src="../assets/imgs/icon_attendance.svg" (click)="navigate('attendance-add')">
         <img src="../assets/imgs/icon_fees.svg" (click)="navigate('fees-add')">
         <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile',student)">
-      </div>
+      </div> -->
     </ion-item>
   </ion-list>
 </ion-content>

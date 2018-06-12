@@ -7,18 +7,22 @@
 
 <ion-content>
   <ion-list no-lines class="card-list">
-    <ion-item *ngFor="let student of studentsList">
+    <ion-item *ngFor="let student of studentsList" (click)="navigate('student-profile',student)">
       <ion-avatar item-start>
         <img src="../assets/imgs/{{student.data().gender}}_avatar.svg" alt="Avatar Image">
         <p>{{student.data().id}}</p>
       </ion-avatar>
       <h2>{{student.data().name}}</h2>
       <p>Fees: {{student.data().fees}}</p>
-      <div class="list-icons" item-end>
+      <ion-note item-end class="list-icons">
+        <p>{{student.data().parentMobile}}</p>
+        <img src="./assets/imgs/icon_phone.svg">
+      </ion-note>
+<!--       <div class="list-icons" item-end>
         <img src="../assets/imgs/icon_attendance.svg" (click)="navigate('attendance-add')">
         <img src="../assets/imgs/icon_fees.svg" (click)="navigate('fees-add')">
         <img src="../assets/imgs/icon_open.svg" (click)="navigate('student-profile',student)">
-      </div>
+      </div> -->
     </ion-item>
   </ion-list>
 

@@ -16,9 +16,12 @@
 // automatically applied to the <body> element in the app.
 .list-icons{
     display:inline;
+    p{
+        float:right;
+    }
     img{
-        width:30px;
-        height:30px;
+        width:18px;
+        height:18px;
         float:right;
         margin-right:10px;
     }

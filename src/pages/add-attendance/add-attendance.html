@@ -13,29 +13,19 @@
 
 
 <ion-content padding>
-  <ion-item no-lines>
-    <ion-icon name="ios-arrow-dropleft-outline" item-start (click)="prevMonth()"></ion-icon>
-    <ion-label text-center>{{displayDate}}</ion-label>
-    <ion-icon name="ios-arrow-dropright-outline" item-end (click)="nextMonth()"></ion-icon>
-  </ion-item>
-<!--   (onEventSelected)="onEventSelected($event)"
-  (onTitleChanged)="onViewTitleChanged($event)"
-  (onTimeSelected)="onTimeSelected($event)"
- -->
-  <calendar
-        [calendarMode]="calendar.mode"
-        [currentDate]="calendar.currentDate" 
-        [lockSwipes]="lockSwipes" 
-        (onCurrentDateChanged)="onCurrentDateChanged($event)" 
-        (onTimeSelected)="onTimeSelected($event)" 
-        step="30"
-        class="calendar">
-    </calendar>
-  <div *ngFor="let event of eventSource">
-    <ion-item *ngIf="event.date == displayDate" no-lines>
-      <ion-label item-start>{{selectedDay}} == {{displayDate}}</ion-label>
-      <ion-label>{{event.name}}</ion-label>
-      <ion-icon [name]="event.present?'md-checkbox':'md-close-circle'" item-end></ion-icon>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2><button ion-button item-start icon-only clear (click)="prevMonth()"><ion-icon name="md-rewind"></ion-icon></button></ion-col>
+      <ion-col col-2><button ion-button icon-only clear (click)="prevDate()"><ion-icon name="ios-arrow-dropleft-outline"></ion-icon></button></ion-col>
+      <ion-col col-4><ion-label text-center>{{displayDate}}</ion-label></ion-col>
+      <ion-col col-2><button ion-button icon-only clear (click)="nextDate()"><ion-icon name="ios-arrow-dropright-outline"></ion-icon></button></ion-col>
+      <ion-col col-2><button ion-button item-end icon-only clear (click)="nextMonth()"><ion-icon name="md-fastforward"></ion-icon></button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngFor="let student of studentsRegister">
+    <ion-item *ngIf="student.date == displayDate" no-lines>
+      <ion-label item-start>{{student.attendance.name}}</ion-label>
+      <ion-icon [name]="student.attendance.present?'md-checkbox':'md-close-circle'" item-end></ion-icon>
     </ion-item>
   </div>
 </ion-content>
