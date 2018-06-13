@@ -22,10 +22,13 @@
       <ion-col col-2><button ion-button item-end icon-only clear (click)="nextMonth()"><ion-icon name="md-fastforward"></ion-icon></button></ion-col>
     </ion-row>
   </ion-grid>
-  <div *ngFor="let student of studentsRegister">
-    <ion-item *ngIf="student.date == displayDate" no-lines>
-      <ion-label item-start>{{student.attendance.name}}</ion-label>
-      <ion-icon [name]="student.attendance.present?'md-checkbox':'md-close-circle'" item-end></ion-icon>
-    </ion-item>
+
+  <div *ngFor="let student of studentsRegister;let i = index">
+    <div *ngIf="student.date == displayDate">
+      <ion-item *ngFor="let record of studentsRegister[i].attendance;let j = index" no-lines>
+        <ion-label item-start>{{studentsRegister[i].attendance[j].name}}</ion-label>
+        <ion-icon item-end [name]="studentsRegister[i].attendance[j].present?'ios-checkmark':'ios-close'"></ion-icon>
+      </ion-item>
+    </div>
   </div>
 </ion-content>

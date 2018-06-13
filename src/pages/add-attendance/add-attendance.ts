@@ -46,11 +46,25 @@ export class AddAttendancePage {
     addRecord.addButton({
       text: 'Ok',
       handler: data => {
+        var flag:boolean = false;
         console.log(data);
         if (data.length > 0){
-          this.studentsRegister.date = this.displayDate;
-          this.studentsRegister.attendance.push(data);
+          this.studentsRegister.forEach(student => {
+            if(student.date == this.displayDate){
+              data.forEach(row => {
+                student.attendance.push(row);
+              });
+              flag = true;
+            }
+          });
+          if (!flag){
+            let register:any = {};
+            register.date = this.displayDate;
+            register.attendance = data;
+            this.studentsRegister.push(register);
+          }
         }
+        console.log(this.studentsRegister);
       }
     });
     addRecord.present();
