@@ -29,6 +29,7 @@
         <ion-label item-start>{{studentsRegister[i].attendance[j].name}}</ion-label>
         <ion-icon item-end [name]="studentsRegister[i].attendance[j].present?'ios-checkmark':'ios-close'"></ion-icon>
       </ion-item>
+      <button ion-button block [disabled]="(studentsRegister.length > 0)?false:true">Save</button>
     </div>
   </div>
 </ion-content>
